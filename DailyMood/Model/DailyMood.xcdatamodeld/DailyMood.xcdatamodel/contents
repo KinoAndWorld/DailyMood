@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6198" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Daily" representedClassName="Daily" syncable="YES">
+        <attribute name="backImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moodType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="weatherState" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="DailyLocation" inverseName="daily" inverseEntity="DailyLocation" syncable="YES"/>
+    </entity>
+    <entity name="DailyLocation" representedClassName="DailyLocation" syncable="YES">
+        <attribute name="detailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="daily" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Daily" inverseName="location" inverseEntity="Daily" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Daily" positionX="-729" positionY="-115" width="128" height="148"/>
+        <element name="DailyLocation" positionX="-531" positionY="5" width="128" height="103"/>
+    </elements>
+</model>
